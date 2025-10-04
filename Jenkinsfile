@@ -10,7 +10,9 @@ pipeline {
             steps {
                 script {
                     // Build the Docker image
-                    sh 'docker build -t devops-first-app .'
+                    sh '/usr/local/bin/docker build -t devops-first-app .'
+                    sh '/usr/local/bin/docker run -d -p 5001:5000 --name devops-first-app devops-first-app'
+
                 }
             }
         }
